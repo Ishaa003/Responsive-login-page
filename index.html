@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login Page</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #84d7d3 0%, #f175c4 100%);
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            background-color: white;
+            width: 900px;
+            max-width: 95%;
+            height: 560px;
+            border-radius: 30px;
+            display: flex;
+            overflow: visible; /* allow overlap */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        /* LEFT SECTION */
+        .login-section {
+            flex: 1.2;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .logo {
+            color: #d88fa5;
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-text {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            background-color: #d1e8f3;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .pass-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .forgot-pass {
+            font-size: 13px;
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .login-btn {
+            background: linear-gradient(to right, #e294aa, #d48198);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .or-text {
+            text-align: center;
+            color: #7ab3d5;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            width: 65px;
+            height: 38px;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .signup-text {
+            text-align: center;
+            font-size: 15px;
+            color: #999;
+        }
+
+        .signup-text a {
+            color: #e294aa;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* RIGHT SECTION */
+        .illustration-section {
+            flex: 0.7;
+            background-color: #c4d7e3;
+            margin: 20px;
+            border-radius: 20px;
+            position: relative;
+            overflow: visible; /* key */
+        }
+
+        .illustration-img {
+            position: absolute;
+            bottom: -3px;
+            left: -60%;     /* overlap into white */
+            width: 170%;
+            max-width: none;
+            object-fit: contain;
+            z-index: 1;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .container {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .illustration-section {
+                order: 2;
+                margin: 15px;
+                height: 260px;
+            }
+
+            .illustration-img {
+                position: static;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- LOGIN -->
+    <div class="login-section">
+        <div class="logo">Logo Here</div>
+        <p class="welcome-text">Welcome back !!!</p>
+        <h1>Log In</h1>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" value="login@gmail.com">
+        </div>
+
+        <div class="input-group">
+            <div class="pass-header">
+                <label>Password</label>
+                <a href="#" class="forgot-pass">Forgot Password?</a>
+            </div>
+            <div style="position: relative;">
+                <input type="password" value="password123">
+                <i class="far fa-eye-slash"
+                   style="position:absolute; right:15px; top:14px; color:#d88fa5;"></i>
+            </div>
+        </div>
+
+        <button class="login-btn">
+            LOGIN <i class="fas fa-long-arrow-alt-right"></i>
+        </button>
+
+        <p class="or-text">or continue with</p>
+
+        <div class="social-login">
+            <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        </div>
+
+        <p class="signup-text">
+            Don't have an account yet? <a href="#">Sign up for free</a>
+        </p>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="illustration-section">
+        <img src="/Character-working-laptop-while-sitting-chair.png"
+             alt="Login Illustration"
+             class="illustration-img">
+    </div>
+</div>
+
+</body>
+</html>
